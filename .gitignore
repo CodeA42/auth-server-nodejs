@@ -1,0 +1,8 @@
+node_modules
+/lib/**/*.js
+/lib/**/*.map
+index.js
+index.js.map
+package-lock.json
+.env
+db.connection.json
