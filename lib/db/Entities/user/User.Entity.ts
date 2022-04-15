@@ -2,8 +2,8 @@ import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
 
 @Entity()
 export default class User {
-    @PrimaryGeneratedColumn()
-    id: number
+    @PrimaryGeneratedColumn("uuid")
+    id: string
 
     @Column({
         length: 24,
@@ -21,14 +21,4 @@ export default class User {
         unique: true
     })
     email: string
-
-    @Column({
-        length: 64
-    })
-    firstName: string
-
-    @Column({
-        length: 64
-    })
-    lastName: string
 }

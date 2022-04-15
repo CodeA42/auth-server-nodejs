@@ -1,7 +1,7 @@
 import { Request, Response} from "express";
 import { insertUser } from "../../../db/queries/user/insert";
 import selectByEmail from "../../../db/queries/user/select/byEmail";
-import { selectByUsername } from "../../../db/queries/user/select/byUsername";
+import selectByUsername from "../../../db/queries/user/select/byUsername";
 import { validateEmail } from "../../../utils/validation/validateEmail";
 import * as bcrypt from "bcrypt";
 import { MissingRegisterData, MissingRegisterDataDefault } from "../../../common/types";
@@ -46,9 +46,7 @@ async function register(req: Request, res: Response){
         const passwordHashed = await bcrypt.hash(password, Number(process.env.saltRounds));
         await insertUser(   username,
                             passwordHashed,
-                            email,
-                            req.body.firstName,
-                            req.body.lastName
+                            email
         );
 
         return res.sendStatus(201);
