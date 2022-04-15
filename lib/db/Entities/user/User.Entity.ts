@@ -17,7 +17,7 @@ export default class User {
     password: string
 
     @Column({
-        length: 100,
+        type: 'text',
         unique: true
     })
     email: string
