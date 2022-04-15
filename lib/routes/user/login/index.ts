@@ -15,7 +15,7 @@ async function login(req: Request, res: Response){
     if(!userData){
         const resultByUsername = await selectByUsername(req.body.username);
         if(!resultByUsername[0]){
-            return res.sendStatus(404).json(process.env.wrongLoginCredentialsMessage);
+            return res.status(404).json(process.env.wrongLoginCredentialsMessage);
         }
         userData = resultByUsername[0]
     }
