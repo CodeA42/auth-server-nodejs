@@ -21,4 +21,7 @@ export default class User {
         unique: true
     })
     email: string
+
+    @Column()
+    admin: boolean
 }
