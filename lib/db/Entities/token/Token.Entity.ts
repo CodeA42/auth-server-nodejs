@@ -2,10 +2,6 @@ import { Column, Entity, PrimaryColumn } from "typeorm"
 
 @Entity()
 export default class Token {
-
-    
-    id: number
-
     @PrimaryColumn({
         type: "text",
         unique: true
