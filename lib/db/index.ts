@@ -13,4 +13,4 @@ export const AppDataSource = new DataSource({
     synchronize: true
 });
 
-AppDataSource.initialize().catch((e) => console.error(e));
+AppDataSource.initialize().then(() => {console.log(`Db init success`)}).catch((e) => console.error(e));
