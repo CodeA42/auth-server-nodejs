@@ -7,6 +7,7 @@ export async function insertUser(username: string, password: string, email: stri
     user.username = username
     user.password = password
     user.email = email
+    user.admin = false
 
     await AppDataSource.manager.save(user)
 }
