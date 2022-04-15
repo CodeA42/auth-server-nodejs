@@ -1,20 +1,16 @@
 import { type } from "os";
 
-export type DbUserData = {
-    user_id: string,
-    username: string,
-    email: string,
-    password: string,
-    first_name: string,
-    last_name: string
-}
+// export type DbUserData = {
+//     user_id: string,
+//     username: string,
+//     email: string,
+//     password: string
+// }
 
 export type TokenUser = {
-    id: number,
+    id: string,
     username: string,
-    email: string,
-    firstName: string,
-    lastName: string
+    email: string
 }
 
 export type DecodedToken = {
