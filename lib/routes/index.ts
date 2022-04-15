@@ -9,7 +9,7 @@ import logoutEverywhere from "./user/logout/everywhere";
 
 const router: Router = Router();  
 router.post("/register", register);
-router.post("/login",  login);
+router.post("/login", login);
 router.get("/logout", validateUser(getRefreshToken), logout)
 router.get("/refresh", validateUser(getRefreshToken), refresh)
 router.get("/logout-everywhere", validateUser(getRefreshToken), logoutEverywhere)

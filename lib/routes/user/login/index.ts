@@ -1,10 +1,10 @@
-import { selectByUsername } from "../../../db/queries/user/select/byUsername";
+import selectByUsername from "../../../db/queries/user/select/byUsername";
 import generateToken from "../../../utils/tokens/generateToken";
 import selectByEmail from "../../../db/queries/user/select/byEmail";
 import * as bcrypt from "bcrypt";
 import { Request, Response } from "express";
 import { TokenUser } from "../../../common/types";
-import { insertToken } from "../../../db/queries/token/insert";
+import insertToken from "../../../db/queries/token/insert";
 import User from "../../../db/Entities/user/User.Entity";
 import getTokenExp from "../../../utils/tokens/getExp";
 

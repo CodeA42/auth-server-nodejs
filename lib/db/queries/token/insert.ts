@@ -1,7 +1,7 @@
 import { AppDataSource } from "../.."
 import Token from "../../Entities/token/Token.Entity"
 
-export async function insertToken(token: string, exp: number, username: string, userAgent: string) {
+export default async function insertToken(token: string, exp: number, username: string, userAgent: string) {
     const tokenEntity = new Token()
     tokenEntity.token = token
     tokenEntity.exp = exp
