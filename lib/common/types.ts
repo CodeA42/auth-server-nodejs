@@ -10,7 +10,8 @@ import { type } from "os";
 export type TokenUser = {
     id: string,
     username: string,
-    email: string
+    email: string,
+    admin: boolean
 }
 
 export type DecodedToken = {
