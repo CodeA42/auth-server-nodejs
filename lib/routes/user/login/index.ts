@@ -23,6 +23,7 @@ async function login(req: Request, res: Response){
     const user: TokenUser = {   id:         userData.id,
                                 username:   userData.username,
                                 email:      userData.email,
+                                admin:      userData.admin
     };
     
     if(await bcrypt.compare(req.body.password, userData.password)){
