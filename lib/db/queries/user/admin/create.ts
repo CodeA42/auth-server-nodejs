@@ -1,4 +1,3 @@
-
 import { AppDataSource } from "../../.."
 import User from "../../../Entities/user/User.Entity"
 import { insertUser } from "../insert"
