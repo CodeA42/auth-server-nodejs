@@ -1,11 +1,4 @@
-import { type } from "os";
-
-// export type DbUserData = {
-//     user_id: string,
-//     username: string,
-//     email: string,
-//     password: string
-// }
+import { type } from "os"
 
 export type TokenUser = {
     id: string,
