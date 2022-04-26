@@ -11,9 +11,9 @@ export default async function selectByEmail(email: string): Promise<User | null>
             email
         }})
         if(user) return user
-        throw new UserNotFoundError(UserNotFoundError.defaultMessage)
     } catch(e) {
         console.error(e)
         return null
     }
+    throw new UserNotFoundError(UserNotFoundError.defaultMessage)
 }
