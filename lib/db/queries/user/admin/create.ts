@@ -1,7 +1,6 @@
 import { AppDataSource } from "../../.."
 import User from "../../../Entities/user/User.Entity"
-import { insertUser } from "../insert"
-import * as bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt'
 
 export async function createAdmin() {
     const password = await bcrypt.hash(process.env.adminPassword, Number(process.env.saltRounds));
@@ -12,5 +11,5 @@ export async function createAdmin() {
     admin.email = process.env.adminMail
     admin.admin = true
 
-    AppDataSource.manager.save(admin);
+    AppDataSource.manager.save(admin)
 }
