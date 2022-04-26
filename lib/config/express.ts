@@ -2,7 +2,7 @@ import * as express from "express";
 import * as cookieParser from "cookie-parser";
 const port = process.env.PORT || 5000;
 
-function configExpress(app){
+function configExpress(app: express.Application){
     app.use(express.json())
     app.use(cookieParser())
 
