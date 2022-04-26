@@ -3,5 +3,7 @@ export default class MissingEmailError extends Error {
     constructor(message: string){
         super(message)
         this.name = "MissingEmailError"
+
+        Object.setPrototypeOf(this, MissingEmailError.prototype)
     }
 }
