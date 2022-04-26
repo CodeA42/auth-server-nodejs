@@ -1,6 +1,6 @@
-import { AppDataSource } from "../../.."
-import MissingTokenError from "../../../../error/MissingTokenError"
-import Token from "../../../Entities/token/Token.Entity"
+import { AppDataSource } from "../.."
+import MissingTokenError from "../../../error/MissingTokenError"
+import Token from "../../Entities/token/Token.Entity"
 
 export async function deleteToken(token: string) {
     if(!token) throw new MissingTokenError(MissingTokenError.defaultMessage)
