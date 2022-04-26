@@ -3,5 +3,7 @@ export default class MissingUsernameError extends Error {
     constructor(message: string){
         super(message)
         this.name = "MissingUsernameError"
+
+        Object.setPrototypeOf(this, MissingUsernameError.prototype)
     }
 }
