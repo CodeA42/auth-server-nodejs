@@ -3,5 +3,7 @@ export default class MissingTokenError extends Error {
     constructor(message: string){
         super(message)
         this.name = "MissingTokenError"
+
+        Object.setPrototypeOf(this, MissingTokenError.prototype)
     }
 }
