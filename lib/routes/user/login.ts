@@ -7,17 +7,24 @@ import { TokenUser } from "../../common/types"
 import insertToken from "../../db/queries/token/insert"
 import User from "../../db/Entities/user/User.Entity"
 import getTokenExp from "../../utils/tokens/getExp"
+import MissingEmailError from "../../error/MissingEmailError"
+import MissingUsernameError from "../../error/MissingUsernameError"
+import UserNotFoundError from "../../error/UserNotFoundError"
 
 export default async function login(req: Request, res: Response){
-    const resultByEmail = await selectByEmail(req.body.email)
-    let userData: User = resultByEmail[0]
-
-    if(!userData){
-        const resultByUsername = await selectByUsername(req.body.username)
-        if(!resultByUsername[0]){
-            return res.status(404).json(process.env.wrongLoginCredentialsMessage)
+    let userData: User
+    try {
+        userData = await selectByEmail(req.body.email || req.body.login)
+    } catch(e) {
+        if(e instanceof MissingEmailError || e instanceof UserNotFoundError) {
+            try {
+                 userData = await selectByUsername(req.body.username || req.body.login)
+            } catch(e) {
+                if(e instanceof MissingUsernameError || e instanceof UserNotFoundError) {
+                    return res.status(404).json(process.env.wrongLoginCredentialsMessage)
+                }
+            }
         }
-        userData = resultByUsername[0]
     }
 
     const user: TokenUser = {   id:         userData.id,
