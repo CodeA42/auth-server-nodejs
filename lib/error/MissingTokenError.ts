@@ -1,6 +1,5 @@
 export default class MissingTokenError extends Error {
-    static defaultMessage: string = "Missing token"
-    constructor(message: string){
+    constructor(message: string = "Missing Token"){
         super(message)
         this.name = "MissingTokenError"
     }
