@@ -7,7 +7,7 @@ export default async function logoutEverywhere(req: Request, res: Response){
 
         res.status(200)
         res.clearCookie('refreshToken')
-        return res.json(process.env.loggedOutMessage)
+        return res.json("Logged out")
     } catch(e){
         console.error(e)
         return res.sendStatus(500)

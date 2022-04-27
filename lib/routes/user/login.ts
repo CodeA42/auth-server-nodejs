@@ -52,6 +52,6 @@ export default async function login(req: Request, res: Response){
             return res.status(500)
         }
     } else {
-        return res.sendStatus(404).json(process.env.wrongLoginCredentialsMessage)
+        return res.sendStatus(404).json("Wrong username or password")
     }
 }
