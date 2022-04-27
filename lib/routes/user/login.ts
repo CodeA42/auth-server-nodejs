@@ -12,6 +12,8 @@ import MissingUsernameError from "../../error/MissingUsernameError"
 import UserNotFoundError from "../../error/UserNotFoundError"
 
 export default async function login(req: Request, res: Response){
+    if(!req.body.password) return res.status(400).json("Missing Password")
+
     let userData: User
     try {
         userData = await selectByEmail(req.body.email || req.body.login)
@@ -31,8 +33,8 @@ export default async function login(req: Request, res: Response){
                                 username:   userData.username,
                                 email:      userData.email,
                                 admin:      userData.admin
-    };
-    
+    }
+
     if(await bcrypt.compare(req.body.password, userData.password)){
         const accessToken: string = generateToken(user, process.env.ACCESS_TOKEN_SECRET, process.env.accessTokenDuration)
         const refreshToken: string = generateToken(user, process.env.REFRESH_TOKEN_SECRET, process.env.refreshTokenDuration)
