@@ -3,7 +3,7 @@ import MissingTokenError from "../../../error/MissingTokenError"
 import Token from "../../Entities/token/Token.Entity"
 
 export async function deleteToken(token: string) {
-    if(!token) throw new MissingTokenError(MissingTokenError.defaultMessage)
+    if(!token) throw new MissingTokenError()
     
     //TODO: check if item is deleted
     try{
