@@ -1,6 +1,5 @@
 export default class UserNotFoundError extends Error {
-    static defaultMessage: string = "User not found"
-    constructor(message: string){
+    constructor(message: string = "User not found"){
         super(message)
         this.name = "UserNotFoundError"
     }
