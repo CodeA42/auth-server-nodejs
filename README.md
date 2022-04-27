@@ -1,10 +1,10 @@
 # auth-server-nodejs
 
-#How to run
+# How to run
 
-##.env
+## .env
 
-###Create ".env" config folder with the following fields
+### Create ".env" config folder with the following fields
 
 ```
 PORT=
@@ -20,11 +20,11 @@ adminMail=
 
 Access and Refresh token values are interpreted by [zeit/ms](https://github.com/vercel/ms)
 
-##DB
+## DB
 
-###Create a databaase and user with the rights to work on the database
+### Create a databaase and user with the rights to work on the database
 
-###Create "db.connection.json" config folder with the following info
+### Create "db.connection.json" config folder with the following info
 
 ```
 {
