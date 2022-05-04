@@ -4,7 +4,7 @@
 
 ## .env
 
-### Create ".env" config folder with the following fields
+### Create ".env" in config folder with the following fields
 
 ```
 PORT=
